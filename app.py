@@ -55,7 +55,7 @@ def main(tickers, prices, dividends_sum):
             col_a.image('images/pie-chart-svgrepo-com.svg')
 
         else:
-            col_a.image(f'https://raw.githubusercontent.com/thefintz/icones-b3/main/icones/{acao}.png', width=85)
+            col_a.image(f'https://raw.githubusercontent.com/thefintz/icones-b3/main/icones/{acao}.png', width= 65)
 
         col_b.metric(label= 'Retorno', value= f'{retorno[acao]:.0%}')
         col_c.metric(label= 'Volatilidade', value= f'{volatilidade[acao]:.0%}')
