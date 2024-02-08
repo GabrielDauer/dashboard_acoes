@@ -27,6 +27,8 @@ def side_bar():
 
         prices['IBOV'] = yf.Ticker('^BVSP').history(start= start_date, end= end_date)['Close']
         dividends_sum['IBOV'] = 0
+        
+        dividends_sum['Portfólio'] = dividends_sum.sum()
 
         return tickers, prices, dividends_sum
     return None, None, None
@@ -39,7 +41,7 @@ def main(tickers, prices, dividends_sum):
     volatilidade = retornos.std() * np.sqrt(252)  # anualizada
     retorno = (norm_prices.iloc[-1] - 100) / 100
 
-    mygrid = grid(5, 5, 5, 5, 5, 5, vertical_align= 'top')
+    mygrid = grid(3, 3, 3, 3, 3, 3, vertical_align= 'top')
 
     for acao in prices.columns:
         c = mygrid.container(border= True)
