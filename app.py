@@ -55,15 +55,15 @@ def main(tickers, prices, dividends_sum):
             col_a.image('images/pie-chart-svgrepo-com.svg')
 
         else:
-            col_a.image(f'https://raw.githubusercontent.com/thefintz/icones-b3/main/icones/{acao}.png', width= 65)
+            col_a.image(f'https://raw.githubusercontent.com/thefintz/icones-b3/main/icones/{acao}.png', width= 85)
 
         col_b.metric(label= 'Retorno', value= f'{retorno[acao]:.0%}')
         col_c.metric(label= 'Volatilidade', value= f'{volatilidade[acao]:.0%}')
         
         if acao in dividends_sum:
-            col_d.metric(label= 'Dividendos', value= f'R${dividends_sum[acao]:.2f}')
+            col_d.metric(label= 'Dividendos (R$)', value= f'{dividends_sum[acao]:.2f}')
         else:
-            col_d.metric(label= 'Dividendos', value= 0)
+            col_d.metric(label= 'Dividendos (R$)', value= 0)
 
         style_metric_cards(background_color= 'rgba(255, 255, 255, 0)')
 
