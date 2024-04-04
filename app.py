@@ -41,7 +41,7 @@ def main(tickers, prices, dividends_sum):
     volatilidade = retornos.std() * np.sqrt(252)  # anualizada
     retorno = (norm_prices.iloc[-1] - 100) / 100
 
-    mygrid = grid(3, 3, 3, 3, 3, 3, vertical_align= 'top')
+    mygrid = grid(2, 2, 2, 2, 2, 2, vertical_align= 'top')
 
     for acao in prices.columns:
         c = mygrid.container(border= True)
